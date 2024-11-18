@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="questionBox">
+            <!-- Task 1 -->
+            <div class="questionOne">
+                <h2>1. Подредете правилно думите!</h2>
+                <div class="words" id="words1">
+                    <div class="word" draggable="true">Дойдох</div>
+                    <div class="word" draggable="true">Видях</div>
+                    <div class="word" draggable="true">Победих</div>
+                </div>
+                <input type="text" class="textBox" id="result1" readonly>
+                <div>
+                    <button onclick="clearInput('result1')">Clear</button>
+                    <button onclick="checkAnswer('result1', 'Дойдох Видях Победих', 'feedback1')">Check</button>
+                </div>
+                <p id="feedback1"></p>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="questionTwo">
+                <h2>2. Попълнете празнините с правилните думи:</h2>
+                <p>Аз ______ и _______.</p>
+                <div class="words" id="words2">
+                    <div class="word" draggable="true">спечелих</div>
+                    <div class="word" draggable="true">видях</div>
+                </div>
+                <input type="text" class="textBox" id="result2" readonly>
+                <div>
+                    <button onclick="clearInput('result2')">Clear</button>
+                    <button onclick="checkAnswer('result2', 'спечелих видях', 'feedback2')">Check</button>
+                </div>
+                <p id="feedback2"></p>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="questionThree">
+                <h2>3. Коя фигура е триъгълник?</h2>
+                <div class="shapes">
+                    <button class="shape" onclick="checkShape('triangle', 'feedback3')">Триъгълник</button>
+                    <button class="shape" onclick="checkShape('square', 'feedback3')">Квадрат</button>
+                    <button class="shape" onclick="checkShape('circle', 'feedback3')">Кръг</button>
+                </div>
+                <p id="feedback3"></p>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="questionFour">
+                <h2>4. Колко е 2 + 2?</h2>
+                <input type="number" id="result4">
+                <button onclick="checkNumericAnswer(4, 'result4', 'feedback4')">Check</button>
+                <p id="feedback4"></p>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="questionFive">
+                <h2>5. Кой е правилният отговор?</h2>
+                <div>
+                    <button onclick="checkSingleChoice('a', 'a', 'feedback5')">a) Правилен</button>
+                    <button onclick="checkSingleChoice('b', 'a', 'feedback5')">b) Грешен</button>
+                    <button onclick="checkSingleChoice('c', 'a', 'feedback5')">c) Грешен</button>
+                </div>
+                <p id="feedback5"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
